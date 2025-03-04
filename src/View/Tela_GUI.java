@@ -36,6 +36,8 @@ public class Tela_GUI extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
 
@@ -43,13 +45,15 @@ public class Tela_GUI extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(null);
 
+        jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel2.setLayout(null);
 
+        panelImage2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         panelImage2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/45401146_l_normal_none.jpg"))); // NOI18N
         panelImage2.setLayout(null);
 
-        labelCustom1.setBackground(new java.awt.Color(255, 102, 51));
-        labelCustom1.setBorder(javax.swing.BorderFactory.createBevelBorder(null));
+        labelCustom1.setBackground(new java.awt.Color(255, 153, 51));
+        labelCustom1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         labelCustom1.setText("MARKET PLACE");
         labelCustom1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         panelImage2.add(labelCustom1);
@@ -58,19 +62,21 @@ public class Tela_GUI extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Clique no MENU para encontrar a opção desejada");
-        jLabel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jLabel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         panelImage2.add(jLabel1);
         jLabel1.setBounds(100, 410, 460, 40);
 
         jPanel2.add(panelImage2);
-        panelImage2.setBounds(0, 0, 650, 480);
+        panelImage2.setBounds(0, 0, 660, 480);
 
         getContentPane().add(jPanel2);
         jPanel2.setBounds(0, 0, 650, 480);
 
-        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/page.png"))); // NOI18N
-        jMenu1.setText("ARQUIVO");
+        jMenuBar1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/cog.png"))); // NOI18N
+        jMenu1.setText("OPÇÕES");
 
         jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/door_out.png"))); // NOI18N
         jMenuItem1.setText("Sair");
@@ -83,14 +89,15 @@ public class Tela_GUI extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/user_add.png"))); // NOI18N
-        jMenu2.setText("CAIXA");
+        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/group_add.png"))); // NOI18N
+        jMenu2.setText("CLIENTES");
         jMenu2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenu2ActionPerformed(evt);
             }
         });
 
+        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/vcard_add.png"))); // NOI18N
         jMenuItem2.setText("Cadastrar Cliente");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -99,18 +106,39 @@ public class Tela_GUI extends javax.swing.JFrame {
         });
         jMenu2.add(jMenuItem2);
 
-        jMenuItem3.setText("Cadastrar Compras");
-        jMenu2.add(jMenuItem3);
+        jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/vcard_edit.png"))); // NOI18N
+        jMenuItem5.setText("Consultar Clientes");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem5);
 
-        jMenuItem4.setText("Nota Fiscal");
+        jMenuBar1.add(jMenu2);
+
+        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/cart.png"))); // NOI18N
+        jMenu3.setText("CAIXA");
+
+        jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/page.png"))); // NOI18N
+        jMenuItem3.setText("Consultar Compras");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem3);
+
+        jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/cart_add.png"))); // NOI18N
+        jMenuItem4.setText("Cadastrar Compras e NF");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem4ActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem4);
+        jMenu3.add(jMenuItem4);
 
-        jMenuBar1.add(jMenu2);
+        jMenuBar1.add(jMenu3);
 
         setJMenuBar(jMenuBar1);
 
@@ -132,8 +160,19 @@ public class Tela_GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-       new NotaFiscal_GUI().setVisible(true);
+        this.dispose();
+        new NotaFiscal_GUI().setVisible(true);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+       this.dispose();
+        new VendasConsultar_GUI().setVisible(true);
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        this.dispose();
+        new ConsultarClientes_GUI().setVisible(true);
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -175,11 +214,13 @@ public class Tela_GUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JPanel jPanel2;
     private org.edisoncor.gui.label.LabelCustom labelCustom1;
     private org.edisoncor.gui.panel.PanelImage panelImage2;

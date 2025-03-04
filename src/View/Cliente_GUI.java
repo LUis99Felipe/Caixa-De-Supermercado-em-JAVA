@@ -33,9 +33,11 @@ public class Cliente_GUI extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        nome3 = new javax.swing.JTextField();
+        cpf1 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        nome4 = new javax.swing.JTextField();
+        nome1 = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        end1 = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         cell1_1 = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
@@ -43,8 +45,8 @@ public class Cliente_GUI extends javax.swing.JFrame {
         email1 = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         cell2_1 = new javax.swing.JTextField();
-        buttonAero1 = new org.edisoncor.gui.button.ButtonAero();
-        buttonAero2 = new org.edisoncor.gui.button.ButtonAero();
+        buttonSeven11 = new org.edisoncor.gui.button.ButtonSeven();
+        buttonSeven12 = new org.edisoncor.gui.button.ButtonSeven();
         jMenuBar1 = new javax.swing.JMenuBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -52,6 +54,7 @@ public class Cliente_GUI extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(0, 51, 51));
+        jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.setMinimumSize(new java.awt.Dimension(650, 480));
         jPanel1.setPreferredSize(new java.awt.Dimension(650, 480));
         jPanel1.setLayout(null);
@@ -76,14 +79,14 @@ public class Cliente_GUI extends javax.swing.JFrame {
         jPanel2.add(jLabel4);
         jLabel4.setBounds(10, 60, 70, 20);
 
-        nome3.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
-        nome3.addActionListener(new java.awt.event.ActionListener() {
+        cpf1.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        cpf1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nome3ActionPerformed(evt);
+                cpf1ActionPerformed(evt);
             }
         });
-        jPanel2.add(nome3);
-        nome3.setBounds(90, 60, 130, 20);
+        jPanel2.add(cpf1);
+        cpf1.setBounds(90, 60, 130, 20);
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -93,20 +96,37 @@ public class Cliente_GUI extends javax.swing.JFrame {
         jPanel2.add(jLabel5);
         jLabel5.setBounds(10, 20, 140, 20);
 
-        nome4.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
-        nome4.addActionListener(new java.awt.event.ActionListener() {
+        nome1.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        nome1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nome4ActionPerformed(evt);
+                nome1ActionPerformed(evt);
             }
         });
-        jPanel2.add(nome4);
-        nome4.setBounds(160, 20, 110, 20);
+        jPanel2.add(nome1);
+        nome1.setBounds(160, 20, 110, 20);
+
+        jLabel8.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setText("Endereço:");
+        jLabel8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.add(jLabel8);
+        jLabel8.setBounds(250, 60, 70, 20);
+
+        end1.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        end1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                end1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(end1);
+        end1.setBounds(330, 60, 120, 20);
 
         jPanel1.add(jPanel2);
         jPanel2.setBounds(40, 80, 520, 110);
 
         jPanel3.setBackground(new java.awt.Color(0, 51, 51));
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Contato do Cliente", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Contatos do Cliente", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel3.setLayout(null);
 
         cell1_1.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
@@ -161,55 +181,68 @@ public class Cliente_GUI extends javax.swing.JFrame {
         cell2_1.setBounds(290, 20, 120, 20);
 
         jPanel1.add(jPanel3);
-        jPanel3.setBounds(40, 220, 520, 110);
+        jPanel3.setBounds(40, 210, 520, 110);
 
-        buttonAero1.setBackground(new java.awt.Color(0, 153, 153));
-        buttonAero1.setText("Voltar");
-        buttonAero1.addActionListener(new java.awt.event.ActionListener() {
+        buttonSeven11.setBackground(new java.awt.Color(255, 204, 102));
+        buttonSeven11.setText("Voltar");
+        buttonSeven11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonAero1ActionPerformed(evt);
+                buttonSeven11ActionPerformed(evt);
             }
         });
-        jPanel1.add(buttonAero1);
-        buttonAero1.setBounds(460, 360, 90, 30);
+        jPanel1.add(buttonSeven11);
+        buttonSeven11.setBounds(490, 360, 80, 30);
 
-        buttonAero2.setBackground(new java.awt.Color(0, 204, 204));
-        buttonAero2.setText("CADASTRAR");
-        jPanel1.add(buttonAero2);
-        buttonAero2.setBounds(220, 350, 160, 40);
+        buttonSeven12.setBackground(new java.awt.Color(0, 204, 204));
+        buttonSeven12.setText("CADASTRAR");
+        buttonSeven12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSeven12ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(buttonSeven12);
+        buttonSeven12.setBounds(240, 350, 120, 40);
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(-10, 0, 600, 420);
+        jPanel1.setBounds(0, 0, 600, 420);
         setJMenuBar(jMenuBar1);
 
-        setSize(new java.awt.Dimension(579, 422));
+        setSize(new java.awt.Dimension(600, 421));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void cell1_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cell1_1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cell1_1ActionPerformed
-
-    private void nome3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nome3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nome3ActionPerformed
-
-    private void nome4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nome4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nome4ActionPerformed
-
-    private void email1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_email1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_email1ActionPerformed
 
     private void cell2_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cell2_1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cell2_1ActionPerformed
 
-    private void buttonAero1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAero1ActionPerformed
+    private void email1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_email1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_email1ActionPerformed
+
+    private void cell1_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cell1_1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cell1_1ActionPerformed
+
+    private void end1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_end1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_end1ActionPerformed
+
+    private void nome1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nome1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nome1ActionPerformed
+
+    private void cpf1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cpf1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cpf1ActionPerformed
+
+    private void buttonSeven11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSeven11ActionPerformed
         this.dispose();
         new Tela_GUI().setVisible(true);
-    }//GEN-LAST:event_buttonAero1ActionPerformed
+    }//GEN-LAST:event_buttonSeven11ActionPerformed
+
+    private void buttonSeven12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSeven12ActionPerformed
+        Model.CadastroCliente.Cadastro();
+    }//GEN-LAST:event_buttonSeven12ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -248,22 +281,24 @@ public class Cliente_GUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private org.edisoncor.gui.button.ButtonAero buttonAero1;
-    private org.edisoncor.gui.button.ButtonAero buttonAero2;
-    private javax.swing.JTextField cell1_1;
-    private javax.swing.JTextField cell2_1;
-    private javax.swing.JTextField email1;
+    private org.edisoncor.gui.button.ButtonSeven buttonSeven11;
+    private org.edisoncor.gui.button.ButtonSeven buttonSeven12;
+    public static javax.swing.JTextField cell1_1;
+    public static javax.swing.JTextField cell2_1;
+    public static javax.swing.JTextField cpf1;
+    public static javax.swing.JTextField email1;
+    public static javax.swing.JTextField end1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField nome3;
-    private javax.swing.JTextField nome4;
+    public static javax.swing.JTextField nome1;
     // End of variables declaration//GEN-END:variables
 }

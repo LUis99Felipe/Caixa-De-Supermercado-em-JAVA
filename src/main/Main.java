@@ -11,6 +11,7 @@ public class Main {
 
     
     public static void main(String[] args) {
+          Model.ConectaDriver_DB.carregaDriver();
             new Splash_GUI().setVisible(true);   
     }
     

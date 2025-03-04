@@ -5,6 +5,11 @@
  */
 package View;
 
+import com.itextpdf.text.DocumentException;
+import java.text.ParseException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Luís Felipe
@@ -29,58 +34,125 @@ public class NotaFiscal_GUI extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        buttonAero1 = new org.edisoncor.gui.button.ButtonAero();
-        buttonAero2 = new org.edisoncor.gui.button.ButtonAero();
         jLabel2 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        cpf3 = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        cliente3 = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        metodo3 = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
+        buttonSeven12 = new org.edisoncor.gui.button.ButtonSeven();
+        jLabel6 = new javax.swing.JLabel();
+        buttonSeven13 = new org.edisoncor.gui.button.ButtonSeven();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        jPanel1.setBackground(new java.awt.Color(0, 51, 51));
+        jPanel1.setBackground(new java.awt.Color(0, 102, 153));
         jPanel1.setMinimumSize(new java.awt.Dimension(650, 480));
         jPanel1.setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("NOTA FISCAL");
+        jLabel1.setText("CADASTRAR COMPRA");
         jLabel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.add(jLabel1);
         jLabel1.setBounds(160, 20, 280, 40);
 
-        buttonAero1.setBackground(new java.awt.Color(0, 153, 153));
-        buttonAero1.setText("Voltar");
-        buttonAero1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonAero1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(buttonAero1);
-        buttonAero1.setBounds(460, 360, 90, 30);
-
-        buttonAero2.setBackground(new java.awt.Color(0, 204, 204));
-        buttonAero2.setText("NOTA FISCAL");
-        buttonAero2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        buttonAero2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonAero2ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(buttonAero2);
-        buttonAero2.setBounds(140, 200, 270, 60);
-
         jLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Clique no botão abaixo e preencha os campos");
+        jLabel2.setText("Preencha os campos obrigatórios abaixo:");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(30, 80, 330, 30);
+        jLabel2.setBounds(40, 70, 330, 30);
+
+        jPanel2.setBackground(new java.awt.Color(0, 102, 153));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Dados do Cliente", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel2.setLayout(null);
+
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Método de Pagamento:");
+        jLabel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.add(jLabel4);
+        jLabel4.setBounds(320, 30, 150, 20);
+
+        cpf3.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        cpf3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cpf3ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(cpf3);
+        cpf3.setBounds(90, 60, 130, 20);
+
+        jLabel5.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("Nome do Cliente:");
+        jLabel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.add(jLabel5);
+        jLabel5.setBounds(10, 20, 140, 20);
+
+        cliente3.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        cliente3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cliente3ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(cliente3);
+        cliente3.setBounds(160, 20, 110, 20);
+
+        jLabel7.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("CPF:");
+        jLabel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.add(jLabel7);
+        jLabel7.setBounds(10, 60, 70, 20);
+
+        metodo3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        metodo3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Débito", "Crédito", "PIX", "Dinheiro" }));
+        jPanel2.add(metodo3);
+        metodo3.setBounds(360, 60, 80, 21);
+
+        jPanel1.add(jPanel2);
+        jPanel2.setBounds(30, 110, 520, 110);
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("necessários para gerar a nota fiscal:");
+        jLabel3.setText("para finalizar a compra e gerar a nota fiscal:");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(30, 100, 420, 40);
+        jLabel3.setBounds(30, 250, 420, 40);
+
+        buttonSeven12.setBackground(new java.awt.Color(0, 51, 153));
+        buttonSeven12.setText("CADASTRAR COMPRA");
+        buttonSeven12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSeven12ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(buttonSeven12);
+        buttonSeven12.setBounds(220, 290, 170, 50);
+
+        jLabel6.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Clique no botão abaixo e preencha as informações necessárias");
+        jPanel1.add(jLabel6);
+        jLabel6.setBounds(30, 230, 460, 30);
+
+        buttonSeven13.setBackground(new java.awt.Color(255, 204, 102));
+        buttonSeven13.setText("Voltar");
+        buttonSeven13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSeven13ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(buttonSeven13);
+        buttonSeven13.setBounds(470, 350, 70, 35);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -103,18 +175,32 @@ public class NotaFiscal_GUI extends javax.swing.JFrame {
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
-        setSize(new java.awt.Dimension(591, 420));
+        setSize(new java.awt.Dimension(600, 420));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void buttonAero1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAero1ActionPerformed
-        this.dispose();
-        new Tela_GUI().setVisible(true);
-    }//GEN-LAST:event_buttonAero1ActionPerformed
-
-    private void buttonAero2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAero2ActionPerformed
+    private void cpf3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cpf3ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_buttonAero2ActionPerformed
+    }//GEN-LAST:event_cpf3ActionPerformed
+
+    private void cliente3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cliente3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cliente3ActionPerformed
+
+    private void buttonSeven12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSeven12ActionPerformed
+        try {
+            Model.NotaFiscall.NotaFiscal();
+        } catch (DocumentException ex) {
+            Logger.getLogger(NotaFiscal_GUI.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ParseException ex) {
+            Logger.getLogger(NotaFiscal_GUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_buttonSeven12ActionPerformed
+
+    private void buttonSeven13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSeven13ActionPerformed
+               this.dispose();
+        new Tela_GUI().setVisible(true);
+    }//GEN-LAST:event_buttonSeven13ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -152,11 +238,19 @@ public class NotaFiscal_GUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private org.edisoncor.gui.button.ButtonAero buttonAero1;
-    private org.edisoncor.gui.button.ButtonAero buttonAero2;
+    private org.edisoncor.gui.button.ButtonSeven buttonSeven12;
+    private org.edisoncor.gui.button.ButtonSeven buttonSeven13;
+    public static javax.swing.JTextField cliente3;
+    public static javax.swing.JTextField cpf3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    public static javax.swing.JComboBox<String> metodo3;
     // End of variables declaration//GEN-END:variables
 }
